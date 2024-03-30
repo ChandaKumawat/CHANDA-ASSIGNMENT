@@ -1,0 +1,147 @@
+////1ST PROGRAM
+public class Bird {
+    private String species;
+    private int age;
+    private String color;
+
+    public Bird(String species,int age,String color){
+        this.species = species;
+        this.age = age;
+        this.color = color;
+    }
+    public void displayInfo(){
+        System.out.println("Species: " + species);
+        System.out.println("Age: " + age);
+        System.out.println("Color: " + color);
+    }
+    public static void main(String[] args) {
+        Bird myBird = new Bird("Sparrow",4,"Red");
+        myBird.displayInfo();
+    }
+}
+
+
+
+////2ND PROGRAM
+class Calculator {
+    private int a;
+    private int b;
+
+    public Calculator(){
+        this.a = 0;
+        this.b = 0;
+    }
+    public Calculator(int a,int b){
+        this.a = a;
+        this.b = b;
+    }
+    public int add(){
+        return a + b;
+    }
+    public int multiply(){
+        return a * b;
+    }
+    public int add(int x,int y){
+        return x + y;
+    }
+    public int multiply(int x,int y){
+        return x * y;
+    }
+}
+public class TestApp{
+    public static void main(String[] args) {
+        Calculator calc = new Calculator();
+
+        System.out.println("Addition: " + calc.add());
+        System.out.println("Multiplication: " + calc.multiply());
+
+        System.out.println("Overloaded Addition: " + calc.add(5,3));
+        System.out.println("Overloaded Multiplication: " + calc.multiply(5,3));
+
+    }
+}
+
+
+////3RD PROGRAM
+class Student {
+    String name;
+    int rollNo;
+    String phoneNumber;
+    String address;
+
+    public Student(String name,int rollNo,String phoneNumber,String address){
+        this.name = name;
+        this.rollNo = rollNo;
+        this.phoneNumber = phoneNumber;
+        this.address = address;
+    }
+    public void printDetails(){
+        System.out.println("Name: " + name);
+        System.out.println("Roll No: " + rollNo);
+        System.out.println("Phone Number: " + phoneNumber);
+        System.out.println("Address: " + address);
+        System.out.println();
+    }
+}
+public class Student1{
+                public static void main(String[] args) {
+                    Student sam = new Student("sam",101,"9087654321","123 Main St");
+                    Student john = new Student("john",102,"1234567890","465 Elm St");
+
+                    sam.printDetails();
+                    john.printDetails();
+                }
+}
+
+
+////4TH PROGRAM
+public class OverloadingExample{
+    private int length;
+    private int width;
+    private int height;
+
+    public OverloadingExample(){
+        length = 0;
+        width = 0;
+        height = 0;
+    }
+    public OverloadingExample(int length,int width){
+        this.length = length;
+        this.width = width;
+        this.height = height;
+    }
+    public OverloadingExample(int length,int width,int height){
+        this.length = length;
+        this.width = width;
+        this.height = height;
+    }
+    public int calculateArea(){
+        return length * width;
+    }
+    public int calculateArea(int length,int width){
+        return length * width;
+    }
+    public int calculateVolume(){
+        return length * width * height;
+    }
+    public int calculateVolume(int length,int width,int height){
+        return length * width * height;
+    }
+    public static void main(String[]args){
+        OverloadingExample obj1 = new OverloadingExample();
+        OverloadingExample obj2 = new OverloadingExample();
+        OverloadingExample obj3 = new OverloadingExample();
+
+        System.out.println("Area of obj1: "+obj1.calculateArea());
+        System.out.println("Area of obj2: "+obj2.calculateArea());
+        System.out.println("Area of obj3: "+obj3.calculateArea());
+
+        System.out.println("Volume of obj1: "+obj1.calculateVolume());
+        System.out.println("Volume of obj2: "+obj1.calculateVolume());
+        System.out.println("Volume of obj3: "+obj1.calculateVolume());
+
+
+
+        
+    }
+}
